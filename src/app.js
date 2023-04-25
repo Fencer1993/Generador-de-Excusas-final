@@ -35,9 +35,15 @@ window.onload = function() {
   };
 
   let generateExcuse = () => {
-    return `${randomWho} ${randomWhat} ${randomObject} ${randomWhere}!!`;
+    return `${randomWho()} ${randomWhat()} ${randomObject()} ${randomWhere()}!!`;
   };
 
+  document.querySelector("h2").innerHTML = "You can't believe me but...";
   console.log(generateExcuse());
-  console.log("Hello Rigo from the console!");
+
+  document.querySelector(".excuse1").innerHTML = generateExcuse();
+  let excuse = document.querySelector("button");
+  excuse.addEventListener("click", function() {
+    document.querySelector(".excuse1").innerHTML = generateExcuse();
+  });
 };
